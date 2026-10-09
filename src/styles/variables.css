@@ -1,0 +1,24 @@
+/* Theme tokens: light is the base, dark is applied by data-theme or by system preference */
+:root {
+  --bg: #f6ebdd;
+  --bg2: #ecdcc8;
+  --ink: #2b140c;
+  --mut: #6d4b3a;
+  --acc: #9a5a24;
+  --drip: #3b1b10;
+  --card: #fffaf2;
+  --line: rgba(59, 27, 16, 0.18);
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #150b07; --bg2: #1f110b; --ink: #f3e3d0; --mut: #b9a08a;
+    --acc: #dba56b; --drip: #4e2616; --card: #26150d; --line: rgba(243, 227, 208, 0.14);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #150b07; --bg2: #1f110b; --ink: #f3e3d0; --mut: #b9a08a;
+  --acc: #dba56b; --drip: #4e2616; --card: #26150d; --line: rgba(243, 227, 208, 0.14);
+}
